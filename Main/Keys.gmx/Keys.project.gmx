@@ -3,11 +3,101 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Shadows</extension>
+    <extension index="1">extensions\Pathfinding</extension>
+  </NewExtensions>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_car</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_street_light</sprite>
+    <sprite>sprites\spr_light_post</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Pathfinding">
+      <scripts name="Path">
+        <script>scripts\path_create.gml</script>
+        <script>scripts\path_get_route.gml</script>
+        <script>scripts\path_reset.gml</script>
+        <script>scripts\path_destroy.gml</script>
+        <script>scripts\path_has_route.gml</script>
+        <script>scripts\path_calculate.gml</script>
+        <script>scripts\path_draw_grid.gml</script>
+      </scripts>
+      <scripts name="Follow">
+        <script>scripts\follow_create.gml</script>
+        <script>scripts\follow_has_point.gml</script>
+        <script>scripts\follow_get_point.gml</script>
+        <script>scripts\follow_update.gml</script>
+        <script>scripts\follow_draw_route.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="ShadowsV0">
+      <scripts name="Light">
+        <script>scripts\light_set_intensity_power.gml</script>
+        <script>scripts\light_create.gml</script>
+        <script>scripts\light_set_dynamic.gml</script>
+        <script>scripts\light_draw_debug.gml</script>
+        <script>scripts\light_set_color.gml</script>
+        <script>scripts\light_set_intensity.gml</script>
+        <script>scripts\light_get_color.gml</script>
+        <script>scripts\light_get_intensity.gml</script>
+        <script>scripts\light_set_cast_shadows.gml</script>
+        <script>scripts\light_get_cast_shadows.gml</script>
+        <script>scripts\light_set_size.gml</script>
+        <script>scripts\light_get_size.gml</script>
+      </scripts>
+      <scripts name="Map">
+        <script>scripts\map_create.gml</script>
+        <script>scripts\map_set_color.gml</script>
+        <script>scripts\map_draw.gml</script>
+        <script>scripts\map_calculate_culling.gml</script>
+      </scripts>
+      <scripts name="Cast">
+        <script>scripts\cast_create.gml</script>
+        <script>scripts\cast_set_dynamic.gml</script>
+      </scripts>
+      <scripts name="Core">
+        <script>scripts\core_shadow.gml</script>
+        <script>scripts\core_distance.gml</script>
+        <script>scripts\core_caster.gml</script>
+        <script>scripts\core_postprocess.gml</script>
+        <script>scripts\core_reductions.gml</script>
+      </scripts>
+    </scripts>
+  </scripts>
+  <shaders name="shaders">
+    <shaders name="ShadowsV0">
+      <shader type="GLSLES">shaders\sdr_dist.shader</shader>
+      <shader type="GLSLES">shaders\sdr_blend_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post.shader</shader>
+      <shader type="GLSLES">shaders\sdr_reduce_linear.shader</shader>
+      <shader type="GLSLES">shaders\sdr_caster_outline.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post2.shader</shader>
+    </shaders>
+  </shaders>
+  <objects name="objects">
+    <objects name="Pathfinding">
+      <object>objects\obj_path_wall</object>
+      <object>objects\obj_point</object>
+    </objects>
+    <objects name="ShadowsV0">
+      <object>objects\obj_light_var</object>
+    </objects>
+    <object>objects\obj_car</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_light_small</object>
+    <object>objects\obj_light_map</object>
+    <object>objects\obj_street_light</object>
+    <object>objects\obj_light_post</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>

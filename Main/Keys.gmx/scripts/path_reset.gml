@@ -1,0 +1,20 @@
+////path_reset(source)
+source = argument0;
+ds_grid_clear(grid,0);
+
+while(ds_queue_size(queue) > 0)
+{
+    ns = ds_queue_dequeue(queue);
+    with(ns)
+    {
+        instance_destroy();
+    }
+}
+ds_queue_clear(queue);
+
+var lx, ly;
+lx = source.x * (1.0 / grid_size);
+ly = source.y * (1.0 / grid_size);
+
+ds_grid_set(grid, lx, ly, 1);
+ds_queue_enqueue(queue, instance_create(lx, ly, obj_point));
