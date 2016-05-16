@@ -13,6 +13,10 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_street_light</sprite>
     <sprite>sprites\spr_light_post</sprite>
+    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_light</sprite>
+    <sprite>sprites\spr_select</sprite>
+    <sprite>sprites\spr_timer</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -94,6 +98,13 @@
     <object>objects\obj_light_map</object>
     <object>objects\obj_street_light</object>
     <object>objects\obj_light_post</object>
+    <objects name="Player">
+      <object>objects\obj_player</object>
+    </objects>
+    <objects name="Camera">
+      <object>objects\obj_camera</object>
+    </objects>
+    <object>objects\obj_selection</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
