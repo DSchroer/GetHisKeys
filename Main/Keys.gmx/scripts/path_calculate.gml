@@ -3,13 +3,20 @@ var counter, i, j, target;
 counter = 0;
 target = argument1;
 
-while(ds_queue_size(queue) > 0 && counter++ != argument0)
+while(ds_queue_size(queue) > 0 && counter++ <= argument0)
 {
-    if(ds_grid_get(grid, target.x / 32, target.y / 32) != 0)
+    if(ds_grid_get(grid, target.x / grid_size, target.y / grid_size) != 0)
     {
         break;
     }
     point = ds_queue_dequeue(queue);
+    
+    var col = collision_point(point.x * grid_size + (grid_size/2), point.y * grid_size + (grid_size/2), obj_path_wall, true, true);
+    if(col != noone && col.dynamic)
+    {
+        ds_queue_enqueue(queue,point);
+        continue;
+    }
     
     for(var stage = 0; stage < 4; stage++)
     {            
@@ -50,11 +57,17 @@ while(ds_queue_size(queue) > 0 && counter++ != argument0)
             continue;
         }
         
-        if(collision_point(np.x * grid_size, np.y * grid_size, obj_path_wall, true, true))
+        var col = collision_point(np.x * grid_size + (grid_size/2), np.y * grid_size + (grid_size/2), obj_path_wall, true, true);
+        if(col != noone)
         {
-            with(np)
+            if(col.dynamic)
             {
-                instance_destroy();
+                ds_queue_enqueue(queue,np);
+            }else{
+                with(np)
+                {
+                    instance_destroy();
+                }
             }
             continue;
         }

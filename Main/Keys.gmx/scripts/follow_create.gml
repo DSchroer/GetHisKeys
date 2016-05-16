@@ -1,8 +1,9 @@
-////follow_create(from,to)
+////follow_create(from,to,size)
 follower = argument0;
 followee = argument1;
+size = argument2;
 
-path_create(follower, 32);
+path_create(follower, size);
 route = ds_stack_create();
 
 position = 0;

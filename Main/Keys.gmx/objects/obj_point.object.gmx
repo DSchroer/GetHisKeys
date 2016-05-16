@@ -28,7 +28,7 @@
             <string>if(debug_mode)
 {
     draw_set_color(c_red);
-    draw_circle((x * 32) + 16, (y * 32) + 16, 8, true);
+    draw_circle((x * 16) + 8, (y * 16) + 8, 8, true);
     draw_set_color(c_white);
 }
 

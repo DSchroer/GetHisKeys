@@ -1,4 +1,12 @@
 ////map_calculate_culling()
+if(surface_exists(lightSurface))
+{
+    if(surface_get_width(lightSurface) != view_wview || surface_get_height(lightSurface) != view_hview)
+    {
+        surface_free(lightSurface)
+    }
+}
+
 var l;
 var c;
 l = ds_map_find_value(instance_find(obj_light_var,0).map_layer,string(layer));

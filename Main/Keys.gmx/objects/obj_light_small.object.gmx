@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>light_create(400,128,0)
-light_set_intensity(0.9)
+            <string>light_create(512,256,0)
+light_set_intensity(1.0)
 //light_set_color(make_color_rgb(182,127,17))
 
 sprite_index = noone

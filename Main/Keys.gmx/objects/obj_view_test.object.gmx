@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,55 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(!debug_mode)
-{
-    window_set_fullscreen(true)
-}else{
-    window_set_size(1366,768)
-    window_set_position(100,100)
-}
-
-min_width = 256;
-min_height = 0;
-scr_resize();
-
-view_enabled = true;
-view_visible = true;
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-var max_speed = 10;
-var dist = 200;
-
-view_xview += (((obj_player.x - (view_wview / 2)) - view_xview) / dist) * max_speed;
-view_yview += (((obj_player.y - (view_hview / 2)) - view_yview) / dist) * max_speed;
-
-//view_xview = obj_player.x - (view_wview / 2)
-//view_yview = obj_player.y - (view_hview / 2)
+            <string>draw_circle(x,y,8,true)
 </string>
           </argument>
         </arguments>
