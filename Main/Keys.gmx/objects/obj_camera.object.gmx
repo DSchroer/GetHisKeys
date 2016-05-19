@@ -28,6 +28,7 @@
             <string>
 if(!debug_mode)
 {
+    window_set_size(display_get_width(), display_get_height())
     window_set_fullscreen(true)
 }else{
     window_set_size(1366,768)
@@ -35,7 +36,7 @@ if(!debug_mode)
 }
 
 min_width = 256;
-min_height = 0;
+
 scr_resize();
 
 view_enabled = true;
@@ -72,8 +73,8 @@ var dist = 200;
 view_xview += (((obj_player.x - (view_wview / 2)) - view_xview) / dist) * max_speed;
 view_yview += (((obj_player.y - (view_hview / 2)) - view_yview) / dist) * max_speed;
 
-//view_xview = obj_player.x - (view_wview / 2)
-//view_yview = obj_player.y - (view_hview / 2)
+view_xview = obj_player.x - (view_wview / 2)
+view_yview = obj_player.y - (view_hview / 2)
 </string>
           </argument>
         </arguments>

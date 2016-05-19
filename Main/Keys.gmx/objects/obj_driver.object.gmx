@@ -7,7 +7,151 @@
   <persistent>0</persistent>
   <parentName>obj_actor</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
+follow_create(self,self,16)
+
+nx = x;
+ny = y;
+
+item_sprite = spr_key;
+item_ref = obj_key;
+
+state = "party"
+
+owned_area = noone;
+
+party = random(1000)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(item_index != noone)
+{
+    if(followee != item_index)
+    {
+        path_reset(follower)
+        follow_create(self,item_index,16)
+    }
+}else{
+///State Machine
+    if(state == "party")
+    {
+       if((party--) &lt;= 0)
+       {
+            state = "drink";
+       }
+    }
+    if(state == "drink")
+    {
+        var num = instance_number(obj_drink_area);
+        var rand = random(num);
+        for(var i = 0; i &lt; num; i++)
+        {
+            var test = instance_find(obj_drink_area, (i + rand) % num);    
+            if(test.owner_index == noone)
+            {
+                test.owner_index = self;
+                owned_area = test;
+                path_reset(follower)
+                follow_create(self,test,16)
+                state = "move"
+                break;
+            }
+        }
+    }if(state == "pee")
+    {
+        var num = instance_number(obj_bathroom_area);
+        var rand = random(num);
+        for(var i = 0; i &lt; num; i++)
+        {
+            var test = instance_find(obj_bathroom_area, (i + rand) % num);    
+            owned_area = test;
+            if(test.owner_index == noone)
+            {
+                test.owner_index = self;
+                path_reset(follower)
+                follow_create(self,test,16)
+                break;
+            }
+        }
+    }
+}
+
+follow_update(100)
+
+if(point_distance(x,y,nx,ny) &lt;= 1)
+{
+    if(follow_has_point())
+    {
+        x = nx;
+        y = ny;
+        var pt = follow_get_point();
+        nx = pt.x;
+        ny = pt.y;
+    }else{
+        var obj = collision_circle(x,y,7,item_index,true,true);
+        if(obj != noone)
+        {
+            item_sprite = obj.sprite_index;
+            item_ref = obj.object_index;
+            item_index = noone;
+            with(obj)
+            {
+                instance_destroy()
+            }
+        }
+        speed = 0;
+    }
+}else{
+    move_towards_point(nx,ny,2)
+    image_angle = point_direction(x,y,nx,ny)
+}
+
+    
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

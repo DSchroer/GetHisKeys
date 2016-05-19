@@ -2,10 +2,13 @@
 var counter, i, j, target;
 counter = 0;
 target = argument1;
+var tx, ty;
+tx = (floor(target.x / grid_size) * grid_size) / grid_size;
+ty = (floor(target.y / grid_size) * grid_size) / grid_size;
 
 while(ds_queue_size(queue) > 0 && counter++ <= argument0)
 {
-    if(ds_grid_get(grid, target.x / grid_size, target.y / grid_size) != 0)
+    if(ds_grid_get(grid, tx, ty) != 0)
     {
         break;
     }
@@ -16,6 +19,11 @@ while(ds_queue_size(queue) > 0 && counter++ <= argument0)
     {
         ds_queue_enqueue(queue,point);
         continue;
+    }
+    
+    if(point.last != 0 && ds_grid_get(grid, point.x, point.y) == 0)
+    {
+        ds_grid_set(grid, point.x, point.y, point.last)
     }
     
     for(var stage = 0; stage < 4; stage++)
@@ -62,6 +70,7 @@ while(ds_queue_size(queue) > 0 && counter++ <= argument0)
         {
             if(col.dynamic)
             {
+                np.last = ds_grid_get(grid, point.x, point.y) + 1;
                 ds_queue_enqueue(queue,np);
             }else{
                 with(np)

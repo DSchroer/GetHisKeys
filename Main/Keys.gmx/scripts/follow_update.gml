@@ -1,4 +1,10 @@
 ////follow_update(amount)
+
+if(!instance_exists(followee))
+{
+    return 0;
+}
+
 if((tx != followee.x || ty != followee.y) && position != 0)
 {
     tx = followee.x;

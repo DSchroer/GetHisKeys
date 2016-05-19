@@ -21,6 +21,14 @@
       <sprite>sprites\spr_toilet</sprite>
       <sprite>sprites\spr_stool</sprite>
     </sprites>
+    <sprite>sprites\spr_key</sprite>
+    <sprites name="UI">
+      <sprite>sprites\spr_item_view</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_button_pressed</sprite>
+    </sprites>
+    <sprite>sprites\spr_drink_area</sprite>
+    <sprite>sprites\spr_bathroom_area</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
@@ -91,6 +99,9 @@
       <shader type="GLSLES">shaders\sdr_post2.shader</shader>
     </shaders>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_ui</font>
+  </fonts>
   <objects name="objects">
     <objects name="Pathfinding">
       <object>objects\obj_path_wall</object>
@@ -102,21 +113,14 @@
     <object>objects\obj_car</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_short_wall</object>
-    <object>objects\obj_light_small</object>
-    <object>objects\obj_light_map</object>
-    <object>objects\obj_street_light</object>
-    <object>objects\obj_light_post</object>
     <objects name="Player">
       <object>objects\obj_player</object>
+      <object>objects\obj_player_ui</object>
     </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>
     </objects>
     <object>objects\obj_selection</object>
-    <objects name="Scenery">
-      <object>objects\obj_toilet</object>
-      <object>objects\obj_stool</object>
-    </objects>
     <object>objects\obj_driver</object>
     <object>objects\obj_collidable</object>
     <objects name="Forces">
@@ -127,8 +131,23 @@
       <object>objects\obj_walk</object>
       <object>objects\obj_target</object>
     </objects>
+    <objects name="Items">
+      <object>objects\obj_key</object>
+      <object>objects\obj_item</object>
+    </objects>
+    <objects name="Areas">
+      <object>objects\obj_area</object>
+      <object>objects\obj_drink_area</object>
+      <object>objects\obj_bathroom_area</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_light_map</object>
+      <object>objects\obj_light_512</object>
+      <object>objects\obj_light_256</object>
+      <object>objects\obj_light_128</object>
+      <object>objects\obj_light_32</object>
+    </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\item_test</room>
     <room>rooms\room0</room>

@@ -1,7 +1,7 @@
 ////map_calculate_culling()
 if(surface_exists(lightSurface))
 {
-    if(surface_get_width(lightSurface) != view_wview || surface_get_height(lightSurface) != view_hview)
+    if(surface_get_width(lightSurface) != view_wport || surface_get_height(lightSurface) != view_hport)
     {
         surface_free(lightSurface)
     }

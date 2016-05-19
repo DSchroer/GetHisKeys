@@ -24,5 +24,5 @@ if(!ds_map_exists(obj_light_var.cast_layer,string(layer)))
     ds_map_add(obj_light_var.cast_layer, string(layer), ds_list_create());
 }
 
-lightSurface = surface_create(view_wview, view_hview);
+lightSurface = surface_create(view_wport, view_hport);
 color = c_black;
