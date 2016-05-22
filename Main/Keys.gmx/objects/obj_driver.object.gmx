@@ -34,11 +34,13 @@ ny = y;
 item_sprite = spr_key;
 item_ref = obj_key;
 
+
+transit = false;
+movement_target = noone;
+prev_target = noone;
+
+
 state = "party"
-
-owned_area = noone;
-
-party = random(1000)
 </string>
           </argument>
         </arguments>
@@ -63,54 +65,50 @@ party = random(1000)
             <kind>1</kind>
             <string>if(item_index != noone)
 {
-    if(followee != item_index)
+    if(movement_target != item_index)
     {
-        path_reset(follower)
-        follow_create(self,item_index,16)
+        //path_reset(follower)
+        //follow_create(self,item_index,16)
+        movement_target = item_index;
     }
 }else{
 ///State Machine
-    if(state == "party")
-    {
-       if((party--) &lt;= 0)
-       {
-            state = "drink";
-       }
-    }
     if(state == "drink")
     {
-        var num = instance_number(obj_drink_area);
-        var rand = random(num);
-        for(var i = 0; i &lt; num; i++)
+        if(!movement_target || movement_target.object_index != obj_drink_area)
         {
-            var test = instance_find(obj_drink_area, (i + rand) % num);    
-            if(test.owner_index == noone)
-            {
-                test.owner_index = self;
-                owned_area = test;
-                path_reset(follower)
-                follow_create(self,test,16)
-                state = "move"
-                break;
-            }
+            scr_find_area(obj_drink_area);
+        }else if(!transit)
+        {
+            image_angle = movement_target.image_angle
         }
     }if(state == "pee")
     {
-        var num = instance_number(obj_bathroom_area);
-        var rand = random(num);
-        for(var i = 0; i &lt; num; i++)
+        if(!movement_target || movement_target.object_index != obj_bathroom_area)
         {
-            var test = instance_find(obj_bathroom_area, (i + rand) % num);    
-            owned_area = test;
-            if(test.owner_index == noone)
-            {
-                test.owner_index = self;
-                path_reset(follower)
-                follow_create(self,test,16)
-                break;
-            }
+            scr_find_area(obj_bathroom_area);
+        }else if(!transit)
+        {
+            image_angle = movement_target.image_angle
+        }
+    }if(state == "party")
+    {
+        if(!movement_target || movement_target.object_index != obj_party_area)
+        {
+            scr_find_area(obj_party_area);
+        }else if(!transit)
+        {
+            state = "drink";
         }
     }
+}
+
+if(movement_target != prev_target)
+{
+    path_reset(self)
+    follow_create(self,movement_target,16)
+    prev_target = movement_target;
+    transit = true;
 }
 
 follow_update(100)
@@ -125,6 +123,7 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
         nx = pt.x;
         ny = pt.y;
     }else{
+        //Item Pickup
         var obj = collision_circle(x,y,7,item_index,true,true);
         if(obj != noone)
         {
@@ -136,6 +135,15 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
                 instance_destroy()
             }
         }
+        
+        //State Transition
+        obj = collision_circle(x,y,7,movement_target,true,true);
+        if(obj != noone)
+        {
+            transit = false;
+        }
+        
+        
         speed = 0;
     }
 }else{

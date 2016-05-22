@@ -35,6 +35,9 @@ item_sprite = noone;
 item_ref = noone;
 item_owner = noone;
 
+button_z = "";
+button_x = "";
+
 //cast_create(0)
 //cast_set_dynamic(true)
 </string>

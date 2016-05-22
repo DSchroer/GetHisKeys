@@ -29,6 +29,7 @@
     </sprites>
     <sprite>sprites\spr_drink_area</sprite>
     <sprite>sprites\spr_bathroom_area</sprite>
+    <sprite>sprites\spr_party_area</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
@@ -87,6 +88,13 @@
       </scripts>
     </scripts>
     <script>scripts\scr_resize.gml</script>
+    <script>scripts\scr_find_area.gml</script>
+    <scripts name="Scale">
+      <script>scripts\upscale_x.gml</script>
+      <script>scripts\upscale_y.gml</script>
+      <script>scripts\scale_x.gml</script>
+      <script>scripts\scale_y.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="ShadowsV0">
@@ -139,6 +147,7 @@
       <object>objects\obj_area</object>
       <object>objects\obj_drink_area</object>
       <object>objects\obj_bathroom_area</object>
+      <object>objects\obj_party_area</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_light_map</object>
