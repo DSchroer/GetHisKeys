@@ -257,6 +257,11 @@ if(obj != noone)
             
             obj.item_sprite = noone;
             obj.item_ref = noone;
+            obj.state = "follow";
+            with(obj)
+            {
+                clear_area()
+            }
         }
         
     }

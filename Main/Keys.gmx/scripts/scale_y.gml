@@ -1,2 +1,2 @@
 ////scale_y()
-return view_hport / view_hview
+return (display_get_gui_height() / view_hview)

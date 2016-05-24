@@ -11,6 +11,7 @@ if((tx != followee.x || ty != followee.y) && position != 0)
     ty = followee.y;
     position = 0;
     path_reset(follower);
+    skips = 1;
 }
 
 if(!path_has_route(followee))

@@ -1,4 +1,6 @@
-////scr_find_area(type)
+////find_area(type)
+
+
 var num = instance_number(argument0);
 var rand = random(num);
 for(var i = 0; i < num; i++)

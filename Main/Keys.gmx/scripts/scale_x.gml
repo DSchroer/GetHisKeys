@@ -1,2 +1,2 @@
 ////scale_x()
-return view_wport / view_wview
+return (display_get_gui_width() / view_wview)

@@ -4,8 +4,8 @@ if(!debug_mode)
     cur_width = max(1, display_get_width());
     cur_height = max(1, display_get_height());
 }else{
-    cur_width = max(1, window_get_width());
-    cur_height = max(1, window_get_height());
+    cur_width = max(1, 1366);
+    cur_height = max(1, 768);
 }
 
 show_debug_message(cur_width)
@@ -19,4 +19,4 @@ view_wport[0] = cur_width;
 view_hport[0] = cur_height;
 
 surface_resize(application_surface, view_wport[0], view_hport[0]);
-display_set_gui_size( view_wport[0], view_hport[0])
+display_set_gui_size(view_wview[0] * 4, view_hview[0] * 4)

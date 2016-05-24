@@ -27,9 +27,16 @@
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_button_pressed</sprite>
     </sprites>
-    <sprite>sprites\spr_drink_area</sprite>
-    <sprite>sprites\spr_bathroom_area</sprite>
-    <sprite>sprites\spr_party_area</sprite>
+    <sprites name="Actors">
+      <sprite>sprites\spr_drunk</sprite>
+    </sprites>
+    <sprites name="Area">
+      <sprite>sprites\spr_party_area</sprite>
+      <sprite>sprites\spr_drink_area</sprite>
+      <sprite>sprites\spr_bathroom_area</sprite>
+      <sprite>sprites\spr_drive_area</sprite>
+    </sprites>
+    <sprite>sprites\spr_bucket</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
@@ -88,13 +95,15 @@
       </scripts>
     </scripts>
     <script>scripts\scr_resize.gml</script>
-    <script>scripts\scr_find_area.gml</script>
+    <script>scripts\find_area.gml</script>
     <scripts name="Scale">
       <script>scripts\upscale_x.gml</script>
       <script>scripts\upscale_y.gml</script>
       <script>scripts\scale_x.gml</script>
       <script>scripts\scale_y.gml</script>
     </scripts>
+    <script>scripts\clear_area.gml</script>
+    <script>scripts\needs_area.gml</script>
   </scripts>
   <shaders name="shaders">
     <shaders name="ShadowsV0">
@@ -129,7 +138,6 @@
       <object>objects\obj_camera</object>
     </objects>
     <object>objects\obj_selection</object>
-    <object>objects\obj_driver</object>
     <object>objects\obj_collidable</object>
     <objects name="Forces">
       <object>objects\obj_select</object>
@@ -148,6 +156,8 @@
       <object>objects\obj_drink_area</object>
       <object>objects\obj_bathroom_area</object>
       <object>objects\obj_party_area</object>
+      <object>objects\obj_drive_area</object>
+      <object>objects\obj_player_area</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_light_map</object>
@@ -156,6 +166,12 @@
       <object>objects\obj_light_128</object>
       <object>objects\obj_light_32</object>
     </objects>
+    <objects name="Actors">
+      <object>objects\obj_driver</object>
+      <object>objects\obj_drunk</object>
+      <object>objects\obj_drunk_bar</object>
+    </objects>
+    <object>objects\obj_bucket</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\item_test</room>

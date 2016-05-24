@@ -17,27 +17,40 @@ var size;
 size = ds_grid_get(grid, target.x / grid_size, target.y / grid_size)
 
 var px, py;
-px = target.x / grid_size;
-py = target.y / grid_size;
+px = (floor(target.x / grid_size) * grid_size) / grid_size;
+py = (floor(target.y / grid_size) * grid_size) / grid_size;
 
 for(var val = size; val > 0; val--)
 {
+    var angle_raw = point_direction(lx, ly, px, py)
+    var angle = round(angle_raw / 90) * 90;
+    var pos = angle_raw > angle;
+    
     for(var stage = 0; stage < 4; stage++)
     {
+        if(pos)
+        {
+            angle = angle + (stage * 90);
+        }else{
+            angle = angle - (stage * 90);
+        }
+        
+        angle = (((angle % 360) + 360) % 360)
+        
         i = 0;
         j = 0;
-        switch(stage)
+        switch(angle)
         {
             case 0:
             i = 1;
             break;
-            case 1:
+            case 90:
             i = -1;
             break;
-            case 2:
+            case 180:
             j = 1;
             break;
-            case 3:
+            case 270:
             j = -1;
             break;
         }
@@ -54,11 +67,12 @@ for(var val = size; val > 0; val--)
         {
             px = nx;
             py = ny;
-            stage = 4;
+            break;
         }
     }
     
-    ds_list_add(list, instance_create(px * grid_size, py * grid_size, obj_point));
+    ds_list_add(list, instance_create(px * grid_size + (grid_size / 2), py * grid_size + (grid_size / 2), obj_point));
 }
 
+ds_list_copy(debug_list, list)
 return list;

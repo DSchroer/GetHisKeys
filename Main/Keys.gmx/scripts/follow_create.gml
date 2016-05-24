@@ -3,6 +3,8 @@ follower = argument0;
 followee = argument1;
 size = argument2;
 
+skips = 0;
+
 path_create(follower, size);
 route = ds_stack_create();
 
