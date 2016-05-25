@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>amt = 100
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_healthbar(follow.x - 8,follow.y + 9, follow.x+8, follow.y+10, 75, c_black, c_green, c_green, 0, true, true)
+            <string>draw_healthbar(x - 8,y + 9, x+8, y+10, amt, c_black, c_green, c_green, 0, true, true)
 
 </string>
           </argument>

@@ -28,8 +28,7 @@
             <string>event_inherited()
 follow_create(self,self,16)
 
-var bar = instance_create(x,y,obj_drunk_bar);
-bar.follow = self;
+bar = noone;
 
 nx = x;
 ny = y;
@@ -50,12 +49,49 @@ max_bladder = 500 + random(1000);
 bladder = 0;
 
 drive_timer = -1;
+drive_max = -1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Setup drive timer
+if(drive_max == -1 &amp;&amp; drive_timer != -1)
+{
+    drive_max = drive_timer;
+    bar = instance_create(x,y,obj_drunk_bar);
+    bar.follow = self;
+}
+
+if(drive_timer == -1 &amp;&amp; bar != noone)
+{
+    with(bar)
+    {
+        instance_destroy();
+    }   
+    bar = noone;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -208,8 +244,38 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
     image_angle = point_direction(x,y,nx,ny)
 }
 
+
     
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move Bar
+
+if(bar != noone)
+{
+    bar.x = x;
+    bar.y = y;
+    bar.amt = (drive_timer / drive_max) * 100;
+}
 
 </string>
           </argument>
