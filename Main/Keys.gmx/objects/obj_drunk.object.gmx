@@ -35,6 +35,7 @@ ny = y;
 
 item_sprite = spr_key;
 item_ref = obj_key;
+item_name = "Key";
 
 
 transit = false;
@@ -160,7 +161,11 @@ if(drive_timer == -1 &amp;&amp; bar != noone)
         }
     }if(state == "follow" )
     {
-        if(needs_area(obj_player_area))
+        if(follow_timer &gt; 0)
+        {
+            follow_timer--;
+            exclaimed = false;
+        }else if(needs_area(obj_player_area))
         {
             var px, py;
             px = floor(obj_player.x / 16) * 16; 
@@ -169,6 +174,12 @@ if(drive_timer == -1 &amp;&amp; bar != noone)
             pl_area = instance_create(px + 8, py + 8, obj_player_area)
             movement_target = pl_area;
             drive_timer = -1;
+            
+            if(!exclaimed)
+            {
+                instance_create(x,y,obj_exclaim)
+                exclaimed = true;
+            }
         }else if(!transit)
         {
             movement_target = noone;
@@ -217,6 +228,7 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
         {
             item_sprite = obj.sprite_index;
             item_ref = obj.object_index;
+            item_name = obj.name;
             item_index = noone;
             with(obj)
             {

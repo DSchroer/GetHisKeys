@@ -34,9 +34,14 @@ instance_create(0,0,obj_player_ui)
 item_sprite = noone;
 item_ref = noone;
 item_owner = noone;
+item_name = "";
 
 button_z = "";
 button_x = "";
+
+strength = 2.5;
+
+follow_amt = 20;
 
 //cast_create(0)
 //cast_set_dynamic(true)
@@ -242,6 +247,7 @@ if(obj != noone)
     if(instance_number(obj_select) == 0)
     {
         var inst = instance_create(obj.x, obj.y, obj_select);
+        button_x = "Pick Pocket"
     }else{
         obj_select.x = obj.x
         obj_select.y = obj.y
@@ -254,10 +260,13 @@ if(obj != noone)
             item_sprite = obj.item_sprite;
             item_ref = obj.item_ref;
             item_owner = obj;
+            item_name = obj.item_name;
             
             obj.item_sprite = noone;
             obj.item_ref = noone;
+            obj.item_name = "";
             obj.state = "follow";
+            obj.follow_timer = follow_amt;
             with(obj)
             {
                 clear_area()
@@ -272,6 +281,7 @@ if(obj != noone)
         with(obj_select)
         {
             instance_destroy()
+            other.button_x = ""
         }
     }
 }
@@ -299,14 +309,23 @@ if(obj != noone)
             <string>///Check Inventory
 var radius = 7;
 
+var obj = collision_circle(x,y,radius,obj_item,true,true);
+
+if(obj == noone)
+{
+    button_z = "";
+}else{
+    button_z = "Pickup Item";
+}
+
 if(keyboard_check_pressed(ord('Z')))
 {
-    var obj = collision_circle(x,y,radius,obj_item,true,true);
     if(item_sprite != noone)
     {
         var item = instance_create(x,y,item_ref)
         item_sprite = noone;
         item_ref = noone;
+        item_name = "";
         if(item_owner != noone)
         {
             item.owner_index = item_owner;
@@ -314,11 +333,15 @@ if(keyboard_check_pressed(ord('Z')))
         }
         item_owner = noone;
         
+        item.velocity_x = hvelocity * strength;
+        item.velocity_y = vvelocity * strength;
+        
     }else if(obj != noone)
     {
         item_ref = obj.object_index;
         item_sprite = obj.sprite_index;
         item_owner = obj.owner_index;
+        item_name = obj.name;
         with(obj)
         {
             instance_destroy()

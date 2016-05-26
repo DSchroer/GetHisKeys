@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
-
-if(debug_mode)
+            <string>if(debug_mode)
 {
     draw_set_color(c_red)
     draw_rectangle(x,y,x+16,y+16,true)

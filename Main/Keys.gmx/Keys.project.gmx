@@ -37,6 +37,8 @@
       <sprite>sprites\spr_drive_area</sprite>
     </sprites>
     <sprite>sprites\spr_bucket</sprite>
+    <sprite>sprites\spr_ball</sprite>
+    <sprite>sprites\spr_exclaim</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
@@ -128,8 +130,6 @@
       <object>objects\obj_light_var</object>
     </objects>
     <object>objects\obj_car</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_short_wall</object>
     <objects name="Player">
       <object>objects\obj_player</object>
       <object>objects\obj_player_ui</object>
@@ -149,6 +149,7 @@
     </objects>
     <objects name="Items">
       <object>objects\obj_key</object>
+      <object>objects\obj_ball</object>
       <object>objects\obj_item</object>
     </objects>
     <objects name="Areas">
@@ -172,6 +173,14 @@
       <object>objects\obj_drunk_bar</object>
     </objects>
     <object>objects\obj_bucket</object>
+    <objects name="Walls">
+      <object>objects\obj_wall</object>
+      <object>objects\obj_short_wall_hidden</object>
+      <object>objects\obj_short_wall</object>
+    </objects>
+    <objects name="Emotes">
+      <object>objects\obj_exclaim</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\item_test</room>
