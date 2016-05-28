@@ -39,11 +39,18 @@
     <sprite>sprites\spr_bucket</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_exclaim</sprite>
+    <sprites name="Bar">
+      <sprite>sprites\spr_bar_end</sprite>
+      <sprite>sprites\spr_bar_center</sprite>
+      <sprite>sprites\spr_bar_value</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_camera</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="Pathfinding">
       <scripts name="Path">
@@ -117,9 +124,14 @@
       <shader type="GLSLES">shaders\sdr_caster_outline.shader</shader>
       <shader type="GLSLES">shaders\sdr_post2.shader</shader>
     </shaders>
+    <shaders name="Font">
+      <shader type="GLSLES">shaders\sdr_outline.shader</shader>
+    </shaders>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_ui</font>
+    <font>fonts\fnt_main_menu</font>
+    <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
     <objects name="Pathfinding">
@@ -136,6 +148,7 @@
     </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>
+      <object>objects\obj_menu_camera</object>
     </objects>
     <object>objects\obj_selection</object>
     <object>objects\obj_collidable</object>
@@ -181,8 +194,16 @@
     <objects name="Emotes">
       <object>objects\obj_exclaim</object>
     </objects>
+    <objects name="Bar">
+      <object>objects\obj_score_bar</object>
+    </objects>
+    <object>objects\obj_level_settings</object>
+    <objects name="Menus">
+      <object>objects\obj_main_menu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\item_test</room>
     <room>rooms\room0</room>
   </rooms>

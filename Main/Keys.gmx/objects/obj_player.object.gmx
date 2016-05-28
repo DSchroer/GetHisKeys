@@ -265,6 +265,12 @@ if(obj != noone)
             obj.item_sprite = noone;
             obj.item_ref = noone;
             obj.item_name = "";
+            
+            if(obj.state != "drive" &amp;&amp; obj.state != "follow")
+            {
+                obj_score_bar.value -= 0.1;
+            }
+            
             obj.state = "follow";
             obj.follow_timer = follow_amt;
             with(obj)

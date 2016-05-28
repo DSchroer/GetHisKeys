@@ -33,11 +33,6 @@ bar = noone;
 nx = x;
 ny = y;
 
-item_sprite = spr_key;
-item_ref = obj_key;
-item_name = "Key";
-
-
 transit = false;
 movement_target = noone;
 prev_target = noone;
@@ -156,6 +151,7 @@ if(drive_timer == -1 &amp;&amp; bar != noone)
             find_area(obj_drive_area);
         }else if(!transit)
         {
+            obj_score_bar.value = obj_score_bar.value - 0.5;
             clear_area();
             instance_destroy();
         }
