@@ -75,7 +75,7 @@ while(drunks-- &gt; 0)
     }
 }
 
-
+obj_control.max_drunks = array_length_1d(drunk_val);
 
 instance_destroy()
 </string>

@@ -48,6 +48,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check Pause
+if(!obj_control.paused)
+{
+    exit;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Check If Triggered
 triggered = false;
 if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
@@ -80,7 +105,13 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
-            room_goto(item_test)
+            //obj_control.paused = false;
+            break;
+        case 1:
+            room_goto(room)
+            break;
+        case 2:
+            room_goto(rm_main_menu)
             break;
         case 3:
             game_end();
@@ -109,33 +140,48 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check Pause
+if(!obj_control.paused)
+{
+    exit;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>
+draw_set_color(c_black)
+draw_set_alpha(0.9)
+draw_roundrect(upscale_x(view_wview[0]/2 - 30),upscale_x(view_hview[0]/2 - 30),upscale_x(view_wview[0]/2 + 30),upscale_x(view_hview[0]/2 + 30),false)
 
 draw_set_color(c_white)
-
-draw_set_font(fnt_title)
+draw_set_alpha(1.0)
+draw_set_font(fnt_main_menu)
 draw_set_halign(fa_center)
-
-draw_text(upscale_x(view_wview[0] / 2),100,"Keys!")
+halign = fa_center
 
 draw_set_font(fnt_main_menu)
-draw_set_halign(fa_right)
-halign = fa_right
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Next Level",0)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Restart",1)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Main Menu",2)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Quit",3)
 
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Play",0)
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Levels",1)
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Credits",2)
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Quit",3)
-
-/*
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) - 75,"Play")
-
-var w = string_width("Play")
-draw_line_width(upscale_x(view_wview[0] - 6) - w, upscale_x(view_hview[0]/2) - 30, upscale_x(view_wview[0] - 4),  upscale_x(view_hview[0]/2) - 30, 3);
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) - 25,"Levels")
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 25,"Credits")
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 75,"Quit")
-*/
 
 
 
@@ -162,6 +208,31 @@ draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 75,"Quit")
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check Pause
+if(!obj_control.paused)
+{
+    exit;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>menu_select(1,true)
 </string>
           </argument>
@@ -169,6 +240,31 @@ draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 75,"Quit")
       </action>
     </event>
     <event eventtype="10" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check Pause
+if(!obj_control.paused)
+{
+    exit;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>

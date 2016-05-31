@@ -113,6 +113,11 @@
     </scripts>
     <script>scripts\clear_area.gml</script>
     <script>scripts\needs_area.gml</script>
+    <scripts name="Menu">
+      <script>scripts\menu_register.gml</script>
+      <script>scripts\menu_draw_button.gml</script>
+      <script>scripts\menu_select.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="ShadowsV0">
@@ -200,7 +205,10 @@
     <object>objects\obj_level_settings</object>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
+      <object>objects\obj_pause_menu</object>
+      <object>objects\obj_end_level</object>
     </objects>
+    <object>objects\obj_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

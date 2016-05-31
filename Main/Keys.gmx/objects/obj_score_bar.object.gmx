@@ -51,7 +51,7 @@ display_speed = 0.05;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>value = max(0,min(value,1))
 
 if(value &lt; display_value)
 {
@@ -70,6 +70,8 @@ if(value &lt; display_value)
         display_value += display_speed;
     }
 }
+
+
 </string>
           </argument>
         </arguments>
