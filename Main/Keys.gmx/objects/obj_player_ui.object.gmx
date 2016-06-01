@@ -27,39 +27,50 @@
             <kind>1</kind>
             <string>draw_set_font(fnt_ui)
 
-draw_sprite_ext(spr_item_view,0,upscale_x(view_wview[0] - 20),upscale_y(view_hview[0] - 25), scale_x(), scale_y(), 0, c_white, 1)
-if(obj_player.item_sprite != noone)
+if(obj_player.show_inv)
 {
-    draw_sprite_ext(obj_player.item_sprite,0,upscale_x(view_wview[0] - 12),upscale_y(view_hview[0] - 17), scale_x(), scale_y(), 0, c_white, 1)
+    draw_sprite_ext(spr_item_view,0,upscale_x(view_wview[0] - 20),upscale_y(view_hview[0] - 25), scale_x(), scale_y(), 0, c_white, 1)
+    if(obj_player.item_sprite != noone)
+    {
+        draw_sprite_ext(obj_player.item_sprite,0,upscale_x(view_wview[0] - 12),upscale_y(view_hview[0] - 17), scale_x(), scale_y(), 0, c_white, 1)
+    }
+    
+    draw_set_halign(fa_right);
+    draw_text(upscale_x(view_wview[0] - 4),upscale_y(view_hview[0] - 8), obj_player.item_name)
 }
-
-draw_set_halign(fa_right);
-draw_text(upscale_x(view_wview[0] - 4),upscale_y(view_hview[0] - 8), obj_player.item_name)
 draw_set_halign(fa_left);
 
-if(keyboard_check(ord('Z')))
+if(obj_player.show_z)
 {
-    draw_sprite_ext(spr_button_pressed,0,upscale_x(4),upscale_y(view_hview[0] - 21), scale_x(), scale_y(), 0, c_white, 1)
-    draw_set_color(make_colour_rgb(136,152,152))
-}else{
-    draw_sprite_ext(spr_button,0,upscale_x(4),upscale_y(view_hview[0] - 21), scale_x(), scale_y(), 0, c_white, 1)
-    draw_set_color(make_colour_rgb(71,79,79))
+    if(keyboard_check(ord('Z')))
+    {
+        draw_sprite_ext(spr_button_pressed,0,upscale_x(4),upscale_y(view_hview[0] - 21), scale_x(), scale_y(), 0, c_white, 1)
+        draw_set_color(make_colour_rgb(136,152,152))
+    }else{
+        draw_sprite_ext(spr_button,0,upscale_x(4),upscale_y(view_hview[0] - 21), scale_x(), scale_y(), 0, c_white, 1)
+        draw_set_color(make_colour_rgb(71,79,79))
+    }
+    draw_text(upscale_x(5.5),upscale_y(view_hview[0] - 21),'Z')
+    
+    draw_set_color(c_white)
+    draw_text(upscale_x(13),upscale_y(view_hview[0] - 21), obj_player.button_z)
 }
-draw_text(upscale_x(5.5),upscale_y(view_hview[0] - 21),'Z')
 
-if(keyboard_check(ord('X')))
+if(obj_player.show_x)
 {
-    draw_sprite_ext(spr_button_pressed,0,upscale_x(4),upscale_y(view_hview[0] - 12), scale_x(), scale_y(), 0, c_white, 1)
-    draw_set_color(make_colour_rgb(136,152,152))
-}else{
-    draw_sprite_ext(spr_button,0,upscale_x(4),upscale_y(view_hview[0] - 12), scale_x(), scale_y(), 0, c_white, 1)
-    draw_set_color(make_colour_rgb(71,79,79))
+    if(keyboard_check(ord('X')))
+    {
+        draw_sprite_ext(spr_button_pressed,0,upscale_x(4),upscale_y(view_hview[0] - 12), scale_x(), scale_y(), 0, c_white, 1)
+        draw_set_color(make_colour_rgb(136,152,152))
+    }else{
+        draw_sprite_ext(spr_button,0,upscale_x(4),upscale_y(view_hview[0] - 12), scale_x(), scale_y(), 0, c_white, 1)
+        draw_set_color(make_colour_rgb(71,79,79))
+    }
+    draw_text(upscale_x(5.5),upscale_y(view_hview[0] - 12),'X')
+    
+    draw_set_color(c_white)
+    draw_text(upscale_x(13),upscale_y(view_hview[0] - 12), obj_player.button_x)
 }
-draw_text(upscale_x(5.5),upscale_y(view_hview[0] - 12),'X')
-
-draw_set_color(c_white)
-draw_text(upscale_x(13),upscale_y(view_hview[0] - 21), obj_player.button_z)
-draw_text(upscale_x(13),upscale_y(view_hview[0] - 12), obj_player.button_x)
 
 </string>
           </argument>

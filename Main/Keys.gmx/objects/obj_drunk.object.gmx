@@ -37,11 +37,11 @@ transit = false;
 movement_target = noone;
 prev_target = noone;
 
-walk_speed = 1;
+walk_speed = 0.5;
 
 state = "drink"
 
-max_bladder = 500 + random(1000);
+max_bladder = 1000 + random(5000);
 bladder = 0;
 
 drive_timer = -1;

@@ -6,7 +6,7 @@
   <vsnap>8</vsnap>
   <hsnap>8</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>4227072</colour>
   <showcolour>-1</showcolour>
@@ -191,6 +191,7 @@
     <instance objName="obj_drunk" x="160" y="136" name="inst_F4034AC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk" x="208" y="32" name="inst_F3E87807" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk" x="144" y="24" name="inst_789A123B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_move" x="160" y="104" name="inst_36A47C67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_obj_tile" x="16" y="16" w="16" h="16" xo="160" yo="0" id="10000020" name="inst_6B52F457" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

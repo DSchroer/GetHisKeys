@@ -42,6 +42,9 @@ scr_resize();
 view_enabled = true;
 view_visible = true;
 
+slide = false;
+focus = obj_player;
+
 
 
 </string>
@@ -67,14 +70,16 @@ view_visible = true;
           <argument>
             <kind>1</kind>
             <string>
-var max_speed = 10;
-var dist = 200;
-
-view_xview += (((obj_player.x - (view_wview / 2)) - view_xview) / dist) * max_speed;
-view_yview += (((obj_player.y - (view_hview / 2)) - view_yview) / dist) * max_speed;
-
-view_xview = obj_player.x - (view_wview / 2)
-view_yview = obj_player.y - (view_hview / 2)
+if(slide)
+{
+    var max_speed = 1;
+    var dist = 50;
+    view_xview += (((focus.x - (view_wview / 2)) - view_xview) / dist) * max_speed;
+    view_yview += (((focus.y - (view_hview / 2)) - view_yview) / dist) * max_speed;
+}else{
+    view_xview = focus.x - (view_wview / 2)
+    view_yview = focus.y - (view_hview / 2)
+}
 </string>
           </argument>
         </arguments>

@@ -22,6 +22,7 @@
       <sprite>sprites\spr_stool</sprite>
     </sprites>
     <sprite>sprites\spr_key</sprite>
+    <sprite>sprites\spr_key_tutorial</sprite>
     <sprites name="UI">
       <sprite>sprites\spr_item_view</sprite>
       <sprite>sprites\spr_button</sprite>
@@ -37,6 +38,7 @@
       <sprite>sprites\spr_drive_area</sprite>
     </sprites>
     <sprite>sprites\spr_bucket</sprite>
+    <sprite>sprites\spr_bucket_tutorial</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_exclaim</sprite>
     <sprites name="Bar">
@@ -44,12 +46,15 @@
       <sprite>sprites\spr_bar_center</sprite>
       <sprite>sprites\spr_bar_value</sprite>
     </sprites>
+    <sprite>sprites\spr_move</sprite>
+    <sprite>sprites\spr_plus_tutorial</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_camera</path>
+    <path>paths\pth_tutorial</path>
   </paths>
   <scripts name="scripts">
     <scripts name="Pathfinding">
@@ -118,6 +123,12 @@
       <script>scripts\menu_draw_button.gml</script>
       <script>scripts\menu_select.gml</script>
     </scripts>
+    <scripts name="Keyboard">
+      <script>scripts\key_up.gml</script>
+      <script>scripts\key_down.gml</script>
+      <script>scripts\key_left.gml</script>
+      <script>scripts\key_right.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="ShadowsV0">
@@ -137,6 +148,7 @@
     <font>fonts\fnt_ui</font>
     <font>fonts\fnt_main_menu</font>
     <font>fonts\fnt_title</font>
+    <font>fonts\fnt_wingdings</font>
   </fonts>
   <objects name="objects">
     <objects name="Pathfinding">
@@ -183,6 +195,7 @@
       <object>objects\obj_light_512</object>
       <object>objects\obj_light_256</object>
       <object>objects\obj_light_128</object>
+      <object>objects\obj_light_128_pulse</object>
       <object>objects\obj_light_32</object>
     </objects>
     <objects name="Actors">
@@ -209,9 +222,19 @@
       <object>objects\obj_end_level</object>
     </objects>
     <object>objects\obj_control</object>
+    <objects name="Tutorial">
+      <object>objects\obj_move</object>
+      <object>objects\obj_tutorial_drunk</object>
+      <object>objects\obj_tutorial_trigger</object>
+      <object>objects\obj_key_mark</object>
+      <object>objects\obj_plus_mask</object>
+      <object>objects\obj_bucket_mask</object>
+    </objects>
+    <object>objects\obj_fps</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\item_test</room>
     <room>rooms\room0</room>
   </rooms>

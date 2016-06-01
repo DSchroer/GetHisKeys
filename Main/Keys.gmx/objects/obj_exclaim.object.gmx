@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>life = 100;
-drain_amt = 5;
+drain_amt = 2;
 </string>
           </argument>
         </arguments>

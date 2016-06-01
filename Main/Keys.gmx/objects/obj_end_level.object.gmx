@@ -105,7 +105,7 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
-            //obj_control.paused = false;
+            room_goto(room_next(room))
             break;
         case 1:
             room_goto(room)
@@ -168,13 +168,16 @@ if(!obj_control.paused)
             <string>
 draw_set_color(c_black)
 draw_set_alpha(0.9)
-draw_roundrect(upscale_x(view_wview[0]/2 - 30),upscale_x(view_hview[0]/2 - 30),upscale_x(view_wview[0]/2 + 30),upscale_x(view_hview[0]/2 + 30),false)
+draw_roundrect(upscale_x(view_wview[0]/2 - 40),upscale_x(view_hview[0]/2 - 50),upscale_x(view_wview[0]/2 + 40),upscale_x(view_hview[0]/2 + 30),false)
 
 draw_set_color(c_white)
 draw_set_alpha(1.0)
 draw_set_font(fnt_main_menu)
 draw_set_halign(fa_center)
 halign = fa_center
+
+draw_set_font(fnt_title)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Level Passed",-1.5)
 
 draw_set_font(fnt_main_menu)
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Next Level",0)

@@ -80,7 +80,7 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
-            room_goto(item_test)
+            room_goto(rm_tutorial)
             break;
         case 3:
             game_end();
