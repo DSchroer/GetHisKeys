@@ -31,6 +31,42 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(collision_rectangle(x-(8 * image_xscale),y-(8 * image_yscale),x+(8 * image_xscale),y+(8 * image_yscale),obj_player, true,true))
+{
+    obj_player.show_x = true;
+}else{
+    obj_player.show_x = false;
+}
+
+if(obj_player.item_ref != noone)
+{
+    obj_player.show_x = true;
+    obj_player.show_z = true;
+    obj_player.show_inv = true;
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
@@ -48,7 +84,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_tutorial_drunk.state = "tutorial"
+            <string>
+/*obj_tutorial_drunk.state = "tutorial"
 obj_tutorial_drunk.timer = 100;
 
 obj_player.x = x;
@@ -59,6 +96,7 @@ obj_camera.focus = obj_tutorial_drunk;
 obj_camera.slide = true;
 
 instance_destroy()
+*/
 </string>
           </argument>
         </arguments>

@@ -116,7 +116,7 @@ draw_set_color(c_white)
 draw_set_font(fnt_title)
 draw_set_halign(fa_center)
 
-draw_text(upscale_x(view_wview[0] / 2),100,"Keys!")
+draw_text(upscale_x(view_wview[0] / 2),75,"Keys!")
 
 draw_set_font(fnt_main_menu)
 draw_set_halign(fa_right)
@@ -127,15 +127,13 @@ menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Levels
 menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Credits",2)
 menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Quit",3)
 
-/*
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) - 75,"Play")
+draw_set_halign(fa_left)
+draw_text(upscale_x(5),upscale_y(view_hview[0]) - 105,"Inspired By:")
 
-var w = string_width("Play")
-draw_line_width(upscale_x(view_wview[0] - 6) - w, upscale_x(view_hview[0]/2) - 30, upscale_x(view_wview[0] - 4),  upscale_x(view_hview[0]/2) - 30, 3);
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) - 25,"Levels")
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 25,"Credits")
-draw_text(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2) + 75,"Quit")
-*/
+draw_set_font(fnt_title)
+
+draw_set_color(make_color_rgb(237,27,36))
+draw_text(upscale_x(5),upscale_y(view_hview[0]) - 70,"MADD")
 
 
 

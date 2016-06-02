@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu_register(4)
+            <string>menu_register(3)
 </string>
           </argument>
         </arguments>
@@ -105,15 +105,12 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
-            room_goto(room_next(room))
-            break;
-        case 1:
             room_goto(room)
             break;
-        case 2:
+        case 1:
             room_goto(rm_main_menu)
             break;
-        case 3:
+        case 2:
             game_end();
             break;
     }
@@ -177,13 +174,12 @@ draw_set_halign(fa_center)
 halign = fa_center
 
 draw_set_font(fnt_title)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Level Passed",-1.5)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Level Failed",-1.5)
 
 draw_set_font(fnt_main_menu)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Continue",0)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Restart",1)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Main Menu",2)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Quit",3)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Retry",0)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Main Menu",1)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Quit",2)
 
 
 

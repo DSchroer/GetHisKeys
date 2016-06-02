@@ -56,7 +56,7 @@ if(obj_player.show_z)
     draw_text(upscale_x(13),upscale_y(view_hview[0] - 21), obj_player.button_z)
 }
 
-if(obj_player.show_x)
+if(obj_player.show_x || obj_player.button_x != "")
 {
     if(keyboard_check(ord('X')))
     {

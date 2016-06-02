@@ -26,95 +26,35 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-follow_create(self,self,16)
+obj_control.max_drunks = 1;
 
-bar = noone;
+walk_speed = 1;
 
-nx = x;
-ny = y;
+item_sprite = spr_key;
+item_ref = obj_key;
+item_name = "Key";
 
 transit = false;
 movement_target = noone;
 prev_target = noone;
 
-walk_speed = 0.5;
-cur_speed = walk_speed;
+follow_create(self,self,16)
 
+nx = x;
+ny = y;
+
+transit = false;
 state = "drink"
 
-max_bladder = 1000 + random(5000);
-bladder = 0;
 
-drive_timer = -1;
-drive_max = -1;
+
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Check Pause
-if(obj_control.paused)
-{
-    speed = 0;
-    exit; 
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setup drive timer
-if(drive_max == -1 &amp;&amp; drive_timer != -1)
-{
-    drive_max = drive_timer;
-    bar = instance_create(x,y,obj_drunk_bar);
-    bar.follow = self;
-}
-
-if(drive_timer == -1 &amp;&amp; bar != noone)
-{
-    with(bar)
-    {
-        instance_destroy();
-    }   
-    bar = noone;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -149,33 +89,9 @@ if(item_index != noone)
         }else if(!transit)
         {
             image_angle = movement_target.image_angle;
-            bladder += 1;
-            if(bladder &gt;= max_bladder)
-            {
-                clear_area();
-                bladder = max_bladder;
-                state = "pee";
-            }
-        }
-    }if(state == "pee")
-    {
-        if(needs_area(obj_bathroom_area))
-        {
-            find_area(obj_bathroom_area);
-        }else if(!transit)
-        {
-            image_angle = movement_target.image_angle
-            bladder -= 5;
-            if(bladder &lt;= 0)
-            {
-                clear_area();
-                bladder = 0;
-                state = "drink";
-            }
         }
     }if(state == "drive" )
     {
-        cur_speed = walk_speed;
         if(needs_area(obj_drive_area))
         {
             find_area(obj_drive_area);
@@ -188,6 +104,10 @@ if(item_index != noone)
         }
     }if(state == "follow" )
     {
+        obj_player.show_x = true;
+        obj_player.show_z = true;
+        obj_player.show_inv = true;
+        
         if(follow_timer &gt; 0)
         {
             exclaimed = false;
@@ -205,8 +125,6 @@ if(item_index != noone)
             movement_target = pl_area;
             drive_timer = -1;
             
-            cur_speed = walk_speed;
-            
             if(!exclaimed)
             {
                 instance_create(x,y,obj_exclaim)
@@ -220,17 +138,6 @@ if(item_index != noone)
                 instance_destroy();
             }
         }
-    }
-}
-
-if(drive_timer != -1)
-{
-    drive_timer -= 1;
-    if(drive_timer = 0)
-    {
-        clear_area();
-        state = "drive";
-        drive_timer = -1;
     }
 }
 
@@ -266,7 +173,7 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
             {
                 instance_destroy()
             }
-            state = "drive"
+            state = "drink"
             movement_target = noone;
             prev_target = noone;
         }
@@ -283,7 +190,7 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
                 obj.item_ref = noone;
                 obj.item_name = "";
                 
-                state = "drive"
+                state = "drink"
                 movement_target = noone;
                 prev_target = noone;
             }
@@ -302,22 +209,23 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
         speed = 0;
     }
 }else{
-     if(nx &gt; x + cur_speed )
+
+    if(nx &gt; x + walk_speed )
     {
-        x += cur_speed;
-    }else if(nx &lt; x - cur_speed)
+        x += walk_speed;
+    }else if(nx &lt; x - walk_speed)
     {
-        x -= cur_speed;
+        x -= walk_speed;
     }else{
         x = nx;
     }
     
-    if(ny &gt; y + cur_speed )
+    if(ny &gt; y + walk_speed )
     {
-        y += cur_speed;
-    }else if(ny &lt; y - cur_speed)
+        y += walk_speed;
+    }else if(ny &lt; y - walk_speed)
     {
-        y -= cur_speed;
+        y -= walk_speed;
     }else{
         y = ny;
     }
@@ -331,35 +239,6 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
 
     
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Move Bar
-
-if(bar != noone)
-{
-    bar.x = x;
-    bar.y = y;
-    bar.amt = (drive_timer / drive_max) * 100;
-}
 
 </string>
           </argument>
@@ -384,23 +263,9 @@ if(bar != noone)
           <argument>
             <kind>1</kind>
             <string>draw_self()
-if(debug_mode)
-{
-    draw_set_color(c_red)
-    var dx, dy;
-    for(var i = 0; i &lt; ds_list_size(debug_list); i++)
-    {
-        var p = ds_list_find_value(debug_list, i);
-        
-        if(i &gt; 0)
-        {
-            draw_line(p.x, p.y, dx, dy)
-        }
-        
-        dx = p.x;
-        dy = p.y;
-    }
-}
+
+
+
 </string>
           </argument>
         </arguments>

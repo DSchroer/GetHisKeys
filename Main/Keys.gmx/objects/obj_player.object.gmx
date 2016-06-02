@@ -286,7 +286,7 @@ if(obj != noone)
         if(obj.item_name != "")
         {
             var inst = instance_create(obj.x, obj.y, obj_select);
-            button_x = "Steal " + obj.item_name;
+            button_x = "Take " + obj.item_name;
         }
         
     }else{
@@ -310,6 +310,14 @@ if(obj != noone)
             if(obj.state != "drive" &amp;&amp; obj.state != "follow" &amp;&amp; instance_number(obj_score_bar) &gt; 0)
             {
                 obj_score_bar.value -= 0.1;
+            }
+            
+            with(obj_drunk)
+            {
+                if(item_ref == obj_key &amp;&amp; state != "drive" &amp;&amp; state != "follow")
+                {
+                    state = "drive" 
+                }
             }
             
             obj.state = "follow";
@@ -382,6 +390,7 @@ if(keyboard_check_pressed(ord('Z')))
         {
             item.owner_index = item_owner;
             item_owner.item_index = item;
+            item_owner.movement_target = noone;
         }
         item_owner = noone;
         
@@ -393,6 +402,10 @@ if(keyboard_check_pressed(ord('Z')))
         item_ref = obj.object_index;
         item_sprite = obj.sprite_index;
         item_owner = obj.owner_index;
+        
+        item_owner.item_index = noone;
+        item_owner.movement_target = noone;
+        
         item_name = obj.name;
         with(obj)
         {

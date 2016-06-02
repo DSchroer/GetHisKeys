@@ -196,6 +196,7 @@
       <object>objects\obj_light_256</object>
       <object>objects\obj_light_128</object>
       <object>objects\obj_light_128_pulse</object>
+      <object>objects\obj_light_128_pulse_red</object>
       <object>objects\obj_light_32</object>
     </objects>
     <objects name="Actors">
@@ -220,11 +221,13 @@
       <object>objects\obj_main_menu</object>
       <object>objects\obj_pause_menu</object>
       <object>objects\obj_end_level</object>
+      <object>objects\obj_fail_level</object>
     </objects>
     <object>objects\obj_control</object>
     <objects name="Tutorial">
       <object>objects\obj_move</object>
       <object>objects\obj_tutorial_drunk</object>
+      <object>objects\obj_tutorial_drunk2</object>
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_key_mark</object>
       <object>objects\obj_plus_mask</object>
@@ -235,6 +238,7 @@
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_level_one</room>
     <room>rooms\item_test</room>
     <room>rooms\room0</room>
   </rooms>
