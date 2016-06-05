@@ -181,10 +181,15 @@ if(item_index != noone)
             find_area(obj_drive_area);
         }else if(!transit)
         {
-            obj_score_bar.value = obj_score_bar.value - (1/(obj_control.max_drunks - 1));
-            obj_control.ended_drunks += 1;
             clear_area();
             instance_destroy();
+            with(obj_pause_menu)
+            {
+                instance_destroy();
+            }
+            instance_create(0,0,obj_fail_level);
+            obj_control.paused = true;
+            obj_control.end_timer = -1;
         }
     }if(state == "follow" )
     {
@@ -384,6 +389,12 @@ if(bar != noone)
           <argument>
             <kind>1</kind>
             <string>draw_self()
+
+if(state == "drive")
+{
+    draw_sprite(spr_wheel, 0, x, y - 8)
+}
+
 if(debug_mode)
 {
     draw_set_color(c_red)

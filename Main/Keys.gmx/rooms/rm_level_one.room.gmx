@@ -232,10 +232,10 @@
     <instance objName="obj_bathroom_area" x="616" y="104" name="inst_E6D491A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="obj_bathroom_area" x="648" y="104" name="inst_49DD03B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="obj_car" x="128" y="120" name="inst_5028F265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_drive_area" x="192" y="144" name="inst_0C96A35C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drive_area" x="184" y="152" name="inst_0C96A35C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drink_area" x="440" y="184" name="inst_8806B9B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_drunk" x="456" y="184" name="inst_D9696AB1" locked="0" code="item_sprite = spr_key;&#xA;item_ref = obj_key;&#xA;item_name = &quot;Key&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_drive_area" x="128" y="144" name="inst_CC77F5FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drive_area" x="136" y="152" name="inst_CC77F5FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_obj_tile" x="592" y="176" w="16" h="16" xo="176" yo="0" id="10000775" name="inst_28893B88" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

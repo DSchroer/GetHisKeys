@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu_register(4)
+            <string>menu_register(1)
 </string>
           </argument>
         </arguments>
@@ -80,13 +80,7 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
-            room_goto(rm_tutorial)
-            break;
-        case 1:
-            room_goto(rm_credits)
-            break;
-        case 2:
-            game_end();
+            room_goto(rm_main_menu)
             break;
     }
 }
@@ -119,24 +113,15 @@ draw_set_color(c_white)
 draw_set_font(fnt_title)
 draw_set_halign(fa_center)
 
-draw_text(upscale_x(view_wview[0] / 2),75,"Keys!")
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Thank You For Playing!",-2)
 
 draw_set_font(fnt_main_menu)
-draw_set_halign(fa_right)
-halign = fa_right
+draw_set_halign(fa_center)
+halign = fa_center
 
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Play",0)
-//menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Levels",1)
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Credits",1)
-menu_draw_button(upscale_x(view_wview[0] - 5),upscale_x(view_hview[0]/2),"Quit",2)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Main Menu",0)
 
-draw_set_halign(fa_left)
-draw_text(upscale_x(5),upscale_y(view_hview[0]) - 105,"Inspired By:")
 
-draw_set_font(fnt_title)
-
-draw_set_color(make_color_rgb(237,27,36))
-draw_text(upscale_x(5),upscale_y(view_hview[0]) - 70,"MADD")
 
 
 

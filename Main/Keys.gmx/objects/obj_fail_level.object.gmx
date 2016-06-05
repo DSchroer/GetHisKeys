@@ -174,7 +174,7 @@ draw_set_halign(fa_center)
 halign = fa_center
 
 draw_set_font(fnt_title)
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Level Failed",-1.5)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Drunk Driver!",-1.5)
 
 draw_set_font(fnt_main_menu)
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Retry",0)
