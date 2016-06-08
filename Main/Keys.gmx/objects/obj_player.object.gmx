@@ -49,8 +49,8 @@ show_x = true;
 show_z = true;
 show_inv = true;
 
-//cast_create(0)
-//cast_set_dynamic(true)
+cast_create(0)
+cast_set_dynamic(true)
 </string>
           </argument>
         </arguments>
