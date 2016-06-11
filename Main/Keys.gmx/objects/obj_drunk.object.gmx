@@ -47,6 +47,13 @@ bladder = 0;
 
 drive_timer = -1;
 drive_max = -1;
+
+image_speed = 3 / 60;
+image_speed *= walk_speed;
+
+drunk = false;
+bubble_timer = 0;
+bubble_interval = 40;
 </string>
           </argument>
         </arguments>
@@ -73,6 +80,11 @@ drive_max = -1;
 if(obj_control.paused)
 {
     speed = 0;
+    if(image_speed != 0)
+    {
+        old_image_speed = image_speed;
+        image_speed = 0;
+    }
     exit; 
 }
 </string>
@@ -336,6 +348,74 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
 
     
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animation
+
+if(point_distance(x,y,nx,ny) &lt;= 1)
+{
+    if(image_speed != 0 &amp;&amp; (image_index &lt;= 1 || (image_index &gt; 2 &amp;&amp; image_index &lt;= 3)))
+    {
+        old_image_speed = image_speed;
+        image_speed = 0;
+    }
+}else{
+    if(image_speed == 0)
+    {
+        image_speed = old_image_speed;
+        image_index = floor(image_index) + 1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Drunk bubbles
+
+if(drunk)
+{
+    bubble_timer++;
+    if(bubble_timer &gt;= bubble_interval)
+    {
+        instance_create(x - 4 + random(8),y - 4 + random(8),obj_bubble)
+        bubble_timer = 0;
+    }
+}
 
 </string>
           </argument>

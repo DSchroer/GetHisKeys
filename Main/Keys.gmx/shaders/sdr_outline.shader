@@ -52,14 +52,29 @@ void main()
         col = texture2D( gm_BaseTexture, v_vTexcoord) * v_vColour;
     }
     
+    if(texture2D( gm_BaseTexture, v_vTexcoord).a > 0.0 && texture2D( gm_BaseTexture, v_vTexcoord).a < 1.0)
+    {
+        col = vec4(0,0,0,1) * texture2D( gm_BaseTexture, v_vTexcoord) * v_vColour;
+    }else if(boarder)
+    {
+        col = vec4(0,0,0,1) * texture2D( gm_BaseTexture, v_vTexcoord) * v_vColour;
+    }else{
+        col = texture2D( gm_BaseTexture, v_vTexcoord) * v_vColour;
+    }
+    
     gl_FragColor = col;
 }
 
 bool IsBoarder(float x, float y)
 {
     bool board = false;
-    //board = texture2D( gm_BaseTexture, v_vTexcoord + vec2(1.0/image_size * x,1.0/image_size * y)).a <= bias && texture2D( gm_BaseTexture, v_vTexcoord).a > 0.0;
-    board = board || (texture2D( gm_BaseTexture, v_vTexcoord).a < 1.0 && texture2D( gm_BaseTexture, v_vTexcoord).a > 0.0);
+    vec2 npos = v_vTexcoord + vec2(1.0/image_size * x,1.0/image_size * y);
+    board = texture2D( gm_BaseTexture, npos).a <= bias;
+    if(npos.x < 0.0 || npos.x > 1.0 || npos.y < 0.0 || npos.y > 1.0)
+    {
+        board = true;
+    }
+    
     return board;
 }
 

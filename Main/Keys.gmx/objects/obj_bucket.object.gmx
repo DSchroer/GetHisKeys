@@ -89,7 +89,7 @@ timer++;
 
 if(obj_player.item_ref == obj_key)
 {
-    if(floor(timer / 60) % 2 == 0)
+    if(floor(timer / 60) % 2 == 0 || obj_control.paused)
     {
         draw_sprite(spr_arrow,0,x,y - 8)
     }else{
