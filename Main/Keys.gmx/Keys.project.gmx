@@ -50,6 +50,7 @@
     <sprite>sprites\spr_menu_prompt</sprite>
     <sprite>sprites\spr_plus_tutorial</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_warn</sprite>
     <sprite>sprites\spr_wheel</sprite>
     <sprite>sprites\spr_bubbles</sprite>
   </sprites>

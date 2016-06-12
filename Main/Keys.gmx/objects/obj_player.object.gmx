@@ -277,12 +277,13 @@ if(abs(hvelocity) &gt; threshold || abs(vvelocity) &gt; threshold)
             <string>///Check Forces
 var force_len = 12;
 
+puickup = false;
 var obj = collision_line(x,y,x+lengthdir_x(force_len,image_angle), y+lengthdir_y(force_len,image_angle), obj_actor, true, true)
 if(obj != noone)
 {
     if(instance_number(obj_select) == 0)
     {
-        if(obj.item_name != "")
+        if(obj.item_name != "" &amp;&amp; item_sprite == noone)
         {
             var inst = instance_create(obj.x, obj.y, obj_select);
             button_x = "Take " + obj.item_name;
@@ -331,6 +332,8 @@ if(obj != noone)
                 instance_destroy()
                 other.button_x = ""
             }
+            
+            puickup = true;
         }
         
     }
@@ -371,21 +374,29 @@ var radius = 7;
 
 var obj = collision_circle(x,y,radius,obj_item,true,true);
 
-if(obj == noone)
+if(obj != noone &amp;&amp; instance_number(obj_select) == 0)
 {
-    button_z = "";
-}else{
-    button_z = "Pickup " + obj.name;
+    button_x = "Pickup " + obj.name;
+}
+
+if(obj == noone &amp;&amp; instance_number(obj_select) == 0)
+{
+    button_x = "";
 }
 
 if(item_name != "")
 {
-    button_z = "Drop " + item_name;
+    if(vvelocity == 0 &amp;&amp; hvelocity == 0)
+    {
+         button_x = "Drop " + item_name;
+    }else{
+         button_x = "Throw " + item_name;
+    }
 }
 
-if(keyboard_check_pressed(ord('Z')))
+if(keyboard_check_pressed(ord('X')))
 {
-    if(item_sprite != noone &amp;&amp; show_z)
+    if(item_sprite != noone &amp;&amp; show_z &amp;&amp; !puickup)
     {
         var item = instance_create(x,y,item_ref)
         item_sprite = noone;
@@ -402,7 +413,7 @@ if(keyboard_check_pressed(ord('Z')))
         item.velocity_x = hvelocity * strength;
         item.velocity_y = vvelocity * strength;
         
-    }else if(obj != noone &amp;&amp; item_ref == noone)
+    }else if(obj != noone &amp;&amp; item_ref == noone &amp;&amp; instance_number(obj_select) == 0)
     {
         item_ref = obj.object_index;
         item_sprite = obj.sprite_index;
@@ -478,6 +489,43 @@ if(vvelocity == 0 &amp;&amp; hvelocity == 0)
             <string>///Move
 x += hvelocity;
 y += vvelocity;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+
+
+for (var i = 0; i &lt; instance_number(obj_drunk); i += 1)
+{
+    var enemy = instance_find(obj_drunk,i);
+    if(enemy.state == "drive")
+    {
+        if(!collision_rectangle(view_xview, view_yview,view_xview + view_wview, view_yview + view_hview, enemy, true, true))
+        {
+            var angle = point_direction(x,y,enemy.x,enemy.y)
+            draw_sprite_ext(spr_warn, 0, other.x, other.y, 1,1,angle, c_white, 1)
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

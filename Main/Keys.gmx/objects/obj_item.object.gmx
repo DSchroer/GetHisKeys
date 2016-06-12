@@ -32,7 +32,7 @@ velocity_x = 0;
 velocity_y = 0;
 
 radius = 7;
-drag = 0.2;
+drag = 0.1;
 dampening = 0.1;
 
 </string>

@@ -94,7 +94,7 @@ draw_set_halign(fa_left);
 
 if(obj_player.show_z)
 {
-    if(keyboard_check(ord('Z')))
+    /*if(keyboard_check(ord('Z')))
     {
         draw_sprite_ext(spr_button_pressed,0,upscale_x(4),upscale_y(view_hview[0] - 21), scale_x(), scale_y(), 0, c_white, 1)
         draw_set_color(make_colour_rgb(136,152,152))
@@ -105,7 +105,7 @@ if(obj_player.show_z)
     draw_text(upscale_x(5.5),upscale_y(view_hview[0] - 21),'Z')
     
     draw_set_color(c_white)
-    draw_text(upscale_x(13),upscale_y(view_hview[0] - 21), obj_player.button_z)
+    draw_text(upscale_x(13),upscale_y(view_hview[0] - 21), obj_player.button_z)*/
 }
 
 if(obj_player.show_x || obj_player.button_x != "")
