@@ -113,7 +113,7 @@ draw_set_color(c_white)
 draw_set_font(fnt_title)
 draw_set_halign(fa_center)
 
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"Thank You For Playing!",-2)
+menu_draw_button(upscale_x(view_wview[0]/2),upscale_x(view_hview[0]/2),"It takes everyone to stop drunk driving.",-2)
 
 draw_set_font(fnt_main_menu)
 draw_set_halign(fa_center)

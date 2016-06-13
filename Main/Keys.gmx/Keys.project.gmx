@@ -10,7 +10,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_car</sprite>
-    <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_street_light</sprite>
     <sprite>sprites\spr_light_post</sprite>
     <sprite>sprites\spr_player</sprite>
@@ -30,6 +29,7 @@
     </sprites>
     <sprites name="Actors">
       <sprite>sprites\spr_drunk</sprite>
+      <sprite>sprites\spr_drunk_driver</sprite>
     </sprites>
     <sprites name="Area">
       <sprite>sprites\spr_party_area</sprite>
@@ -53,6 +53,12 @@
     <sprite>sprites\spr_warn</sprite>
     <sprite>sprites\spr_wheel</sprite>
     <sprite>sprites\spr_bubbles</sprite>
+    <sprite>sprites\spr_bottle</sprite>
+    <sprites name="walls">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wall_short</sprite>
+      <sprite>sprites\spr_wall_hidden</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_obj_tile</background>
@@ -115,6 +121,8 @@
     </scripts>
     <script>scripts\scr_resize.gml</script>
     <script>scripts\find_area.gml</script>
+    <script>scripts\find_area_close_jump.gml</script>
+    <script>scripts\find_area_close.gml</script>
     <scripts name="Scale">
       <script>scripts\upscale_x.gml</script>
       <script>scripts\upscale_y.gml</script>
@@ -208,6 +216,7 @@
       <object>objects\obj_driver</object>
       <object>objects\obj_drunk</object>
       <object>objects\obj_drunk_bar</object>
+      <object>objects\obj_drunk_driver</object>
     </objects>
     <object>objects\obj_bucket</object>
     <objects name="Walls">
@@ -242,8 +251,10 @@
     </objects>
     <object>objects\obj_fps</object>
     <object>objects\obj_bubble</object>
+    <object>objects\obj_level_reset</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_level_three</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_level_one</room>

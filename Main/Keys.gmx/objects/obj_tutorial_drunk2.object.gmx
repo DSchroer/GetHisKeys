@@ -32,7 +32,7 @@ walk_speed = 1;
 
 item_sprite = spr_key;
 item_ref = obj_key;
-item_name = "Key";
+item_name = "Car Keys";
 
 transit = false;
 movement_target = noone;
@@ -51,6 +51,10 @@ image_speed *= walk_speed;
 
 bubble_timer = 0;
 bubble_interval = 40;
+
+bottle = 0.01;
+bottle_alpha = 0.0;
+bottle_index = random(sprite_get_number(spr_bottle))
 </string>
           </argument>
         </arguments>
@@ -330,16 +334,18 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drunk bubbles
+            <string>///Drunk Bottle
 
-bubble_timer++;
-
-if(bubble_timer &gt;= bubble_interval)
+bottle_alpha += bottle;
+if(bottle_alpha &gt; 1)
 {
-    instance_create(x - 4 + random(8),y - 4 + random(8),obj_bubble)
-    bubble_timer = 0;
+    bottle_alpha = 1.0;
+    bottle = -bottle;
+}else if(bottle_alpha &lt; 0)
+{
+    bottle_alpha = 0.0;
+    bottle = -bottle;
 }
-
 </string>
           </argument>
         </arguments>
@@ -363,6 +369,13 @@ if(bubble_timer &gt;= bubble_interval)
           <argument>
             <kind>1</kind>
             <string>draw_self()
+
+if(state == "drink" &amp;&amp; !transit)
+{
+    draw_set_alpha(bottle_alpha)
+    draw_sprite(spr_bottle,bottle_index,x,y)
+    draw_set_alpha(1)
+}
 
 
 

@@ -81,7 +81,7 @@
     <instance objName="obj_short_wall_hidden" x="96" y="304" name="inst_C35AF63F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_short_wall_hidden" x="112" y="304" name="inst_438B46F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_short_wall_hidden" x="304" y="96" name="inst_834F47A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_control" x="96" y="64" name="inst_0D95E119" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_control" x="96" y="64" name="inst_0D95E119" locked="0" code="text = &quot;EVERY DAY IN AMERICA,# 27 PEOPLE DIE AS A RESULT OF DRUNK DRIVING.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pause_menu" x="112" y="64" name="inst_1C2D02F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_move" x="112" y="224" name="inst_FD07317C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_map" x="128" y="64" name="inst_9DC5FCED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

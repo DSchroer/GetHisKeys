@@ -75,6 +75,11 @@ image_speed = 3 / 60;
             <string>///Check Pause
 if(obj_control.paused)
 {
+    if(image_speed != 0)
+    {
+        old_image_speed = image_speed;
+        image_speed = 0;
+    }
     exit;
 }
 </string>

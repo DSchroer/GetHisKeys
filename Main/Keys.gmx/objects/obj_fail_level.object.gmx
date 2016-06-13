@@ -105,6 +105,7 @@ if(keyboard_check_released(vk_enter) || keyboard_check_released(vk_space)
     switch(menu_selected)
     {
         case 0:
+            instance_create(0,0,obj_level_reset);
             room_goto(room)
             break;
         case 1:
