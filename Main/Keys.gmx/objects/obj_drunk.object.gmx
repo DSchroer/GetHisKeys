@@ -270,7 +270,7 @@ if(movement_target != prev_target)
     transit = true;
 }
 
-follow_update(100)
+follow_update(50)
 
 if(point_distance(x,y,nx,ny) &lt;= 1)
 {

@@ -51,11 +51,13 @@
             <string>var obj = collision_circle(x,y, 8, obj_key, true, true)
 if(obj != noone)
 {
-    obj.owner_index.state = "drink"
-    obj.owner_index.item_index = noone;
-    obj.owner_index.movement_target = noone;
-    
-    obj_control.ended_drunks += 1;
+    if(obj.owner_index != noone)
+    {
+        obj.owner_index.state = "drink"
+        obj.owner_index.item_index = noone;
+        obj.owner_index.movement_target = noone;
+        obj_control.ended_drunks += 1;
+    }
     
     with(obj)
     {

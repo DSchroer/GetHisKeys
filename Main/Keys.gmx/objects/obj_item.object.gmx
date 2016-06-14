@@ -33,7 +33,7 @@ velocity_y = 0;
 
 radius = 7;
 drag = 0.1;
-dampening = 0.1;
+dampening = -1;
 
 </string>
           </argument>
@@ -125,18 +125,18 @@ if(velocity_y &gt; drag)
             <string>///Collision
 if(collision_circle(x, y + velocity_y, radius, obj_collidable, true, true))
 {
-    velocity_y = -velocity_y;
+    velocity_y = velocity_y * dampening;
 }
 
 if(collision_circle(x + velocity_x, y, radius, obj_collidable, true, true))
 {
-    velocity_x = -velocity_x;
+    velocity_x = velocity_x * dampening;
 }
 
 if(collision_circle(x + velocity_x, y + velocity_y, radius, obj_collidable, true, true))
 {
-    velocity_x = -velocity_x;
-    velocity_y = -velocity_y;
+    velocity_x = velocity_x * dampening;
+    velocity_y = velocity_y * dampening;
 }
 </string>
           </argument>

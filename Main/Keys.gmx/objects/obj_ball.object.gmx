@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited()
-drag = 0.1;
-radius = 4;
+drag = 0.01;
+radius = 7;
 name = "Ball"
 </string>
           </argument>

@@ -254,11 +254,11 @@
     <object>objects\obj_level_reset</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_level_three</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_tutorial</room>
     <room>rooms\rm_level_one</room>
     <room>rooms\rm_level_two</room>
+    <room>rooms\rm_level_three</room>
     <room>rooms\rm_end</room>
     <room>rooms\item_test</room>
     <room>rooms\room0</room>

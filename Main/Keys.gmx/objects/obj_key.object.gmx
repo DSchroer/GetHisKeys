@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>event_inherited()
 name = "Car Keys"
+
+drag = 0.075;
+dampening = -0.8;
 </string>
           </argument>
         </arguments>

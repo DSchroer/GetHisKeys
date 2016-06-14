@@ -29,6 +29,12 @@
 vvelocity = 0;
 hvelocity = 0;
 
+drag = 0.25;
+max_speed = 1.25;
+accel = 0.25;
+
+strength = 3;
+
 instance_create(0,0,obj_player_ui)
 
 item_sprite = noone;
@@ -39,7 +45,7 @@ item_name = "";
 button_z = "";
 button_x = "";
 
-strength = 2.5;
+
 
 follow_amt = 20;
 
@@ -49,7 +55,7 @@ show_x = true;
 show_z = true;
 show_inv = true;
 
-image_speed = 3 / 60;
+image_speed = 4 / 60;
 </string>
           </argument>
         </arguments>
@@ -103,9 +109,7 @@ if(obj_control.paused)
           <argument>
             <kind>1</kind>
             <string>///Calculate Base Movement
-var drag = 0.25;
-var max_speed = 1;
-var accel = 0.25;
+
 
 if(keyboard_check(vk_up) &amp;&amp; !keyboard_check(vk_down))
 {
@@ -167,6 +171,33 @@ if(!can_move)
 {
     hvelocity = 0;
     vvelocity = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Normalize Movement
+var len = sqrt((vvelocity * vvelocity) + (hvelocity * hvelocity))
+if(len &gt; max_speed)
+{
+    vvelocity = (vvelocity / len) * max_speed;
+    hvelocity = (hvelocity / len) * max_speed;
 }
 </string>
           </argument>
@@ -424,8 +455,11 @@ if(keyboard_check_pressed(ord('X')))
         item_sprite = obj.sprite_index;
         item_owner = obj.owner_index;
         
-        item_owner.item_index = noone;
-        item_owner.movement_target = noone;
+        if(item_owner != noone)
+        {
+            item_owner.item_index = noone;
+            item_owner.movement_target = noone;
+        }
         
         item_name = obj.name;
         with(obj)

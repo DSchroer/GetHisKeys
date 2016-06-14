@@ -30,7 +30,7 @@
 sprite_index = spr_drunk
 item_sprite = spr_key;
 item_ref = obj_key;
-item_name = "Key";
+item_name = "Car Keys";
 drunk = true;
 </string>
           </argument>
