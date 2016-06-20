@@ -82,7 +82,8 @@ if(obj_player.show_inv)
     }
     
     draw_set_halign(fa_right);
-    //draw_text(upscale_x(view_wview[0] - 4),upscale_y(view_hview[0] - 35), "Inventory:")
+    
+    draw_set_color(c_white)
     if(obj_player.item_name != "")
     {
         draw_text(upscale_x(view_wview[0] - 4),upscale_y(view_hview[0] - 12),"Inventory: " + obj_player.item_name)

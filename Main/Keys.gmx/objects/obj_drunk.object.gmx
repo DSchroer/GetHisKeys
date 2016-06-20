@@ -314,6 +314,8 @@ if(point_distance(x,y,nx,ny) &lt;= 1)
                 state = "drive"
                 movement_target = noone;
                 prev_target = noone;
+                
+                audio_play_sound(snd_steal,1,false)
             }
         }
         
@@ -491,7 +493,7 @@ if(state == "drive")
     draw_set_alpha(1)
 }
 
-if(drunk &amp;&amp; state == "drink" &amp;&amp; !transit)
+if(drunk &amp;&amp; state == "drink" &amp;&amp; !transit &amp;&amp; item_ref != noone)
 {
     draw_set_alpha(bottle_alpha)
     draw_sprite(spr_bottle,bottle_index,x,y)

@@ -51,11 +51,11 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_player" x="272" y="352" name="inst_B189C9AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="544" y="512" name="inst_B189C9AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_control" x="176" y="208" name="inst_0D95E119" locked="0" code="max_drunks = 4;&#xA;text = &quot;Impaired driving does not just happen at night,# it can occur any time of the day.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pause_menu" x="192" y="208" name="inst_1C2D02F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_map" x="208" y="208" name="inst_9DC5FCED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_light_256" x="272" y="352" name="inst_31C5F757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light_256" x="280" y="352" name="inst_31C5F757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera" x="160" y="208" name="inst_77FC962C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car" x="224" y="264" name="inst_5028F265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drive_area" x="264" y="296" name="inst_0C96A35C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -129,7 +129,7 @@
     <instance objName="obj_wall" x="672" y="672" name="inst_79AB9A92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="688" y="672" name="inst_DB69FDD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="704" y="672" name="inst_5EAC1F17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bucket" x="544" y="440" name="inst_21FA4E34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bucket" x="544" y="536" name="inst_21FA4E34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drink_area" x="584" y="280" name="inst_E6BAA4E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_drink_area" x="504" y="280" name="inst_8CD0102E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_drink_area" x="536" y="280" name="inst_4D82F6A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -138,7 +138,7 @@
     <instance objName="obj_drink_area" x="648" y="664" name="inst_BBD50448" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drink_area" x="440" y="584" name="inst_20BF1D22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_drink_area" x="440" y="616" name="inst_E33B42B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="obj_drink_area" x="440" y="632" name="inst_D5C7D2A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_drink_area" x="440" y="648" name="inst_D5C7D2A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_drunk" x="488" y="584" name="inst_2EAFFC3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk" x="488" y="616" name="inst_7A82730E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk" x="488" y="640" name="inst_61BE4D34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -149,12 +149,12 @@
     <instance objName="obj_light_512" x="544" y="560" name="inst_003736E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_512" x="440" y="616" name="inst_955BC223" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_512" x="648" y="616" name="inst_8D67F55B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_drink_area" x="440" y="664" name="inst_31FE8036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_drink_area" x="440" y="568" name="inst_31FE8036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_drink_area" x="648" y="632" name="inst_7468735A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk_driver" x="504" y="296" name="inst_83060338" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk_driver" x="616" y="664" name="inst_517106E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk_driver" x="584" y="296" name="inst_41BAF1B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_drunk_driver" x="480" y="656" name="inst_6B6F2B07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drunk_driver" x="456" y="568" name="inst_6B6F2B07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drunk" x="544" y="296" name="inst_E155B2E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="368" y="448" name="inst_2C7851F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="368" y="464" name="inst_5F3B59EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -339,6 +339,17 @@
     <instance objName="obj_short_wall_hidden" x="656" y="640" name="inst_5C785CA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_short_wall_hidden" x="656" y="656" name="inst_844954E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_512" x="544" y="232" name="inst_A6CCF942" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drink_area" x="552" y="280" name="inst_037C5F58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_drink_area" x="568" y="280" name="inst_0DDFB7A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_drink_area" x="520" y="280" name="inst_10A35BDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_drink_area" x="488" y="280" name="inst_0077E208" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_drink_area" x="600" y="280" name="inst_694A4B7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_drink_area" x="648" y="584" name="inst_49E67721" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drink_area" x="648" y="616" name="inst_4C726816" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drink_area" x="648" y="648" name="inst_AD515F43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_drink_area" x="440" y="600" name="inst_29D698AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_drink_area" x="440" y="632" name="inst_8F3ECD96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_drink_area" x="440" y="664" name="inst_C1B3B246" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
   </instances>
   <tiles>
     <tile bgName="bkg_obj_tile" x="480" y="224" w="16" h="16" xo="176" yo="0" id="10001485" name="inst_D236E89E" depth="2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

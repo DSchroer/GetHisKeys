@@ -123,20 +123,31 @@ if(velocity_y &gt; drag)
           <argument>
             <kind>1</kind>
             <string>///Collision
+var col = false;
 if(collision_circle(x, y + velocity_y, radius, obj_collidable, true, true))
 {
     velocity_y = velocity_y * dampening;
+    col = true;
 }
 
 if(collision_circle(x + velocity_x, y, radius, obj_collidable, true, true))
 {
     velocity_x = velocity_x * dampening;
+    col = true;
 }
 
 if(collision_circle(x + velocity_x, y + velocity_y, radius, obj_collidable, true, true))
 {
     velocity_x = velocity_x * dampening;
     velocity_y = velocity_y * dampening;
+    col = true;
+}
+
+if(col)
+{
+    col = false;
+    audio_play_sound(snd_key_bounce,1,false)
+
 }
 </string>
           </argument>

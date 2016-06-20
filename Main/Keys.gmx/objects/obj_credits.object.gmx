@@ -113,6 +113,7 @@ draw_set_color(c_white)
 draw_set_font(fnt_title)
 draw_set_halign(fa_center)
 
+/*
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-100),"Credits",-9)
 
 draw_set_font(fnt_main_menu)
@@ -123,12 +124,13 @@ menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-100),"Tester
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-100),"Tester: Mattias Schroer",-3.5)
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-100),"Tester: Jochen Schroer",-2.5)
 menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-100),"Tester: Andrew Pelletier",-1.5)
+*/
 
 draw_set_font(fnt_main_menu)
 draw_set_halign(fa_center)
 halign = fa_center
 
-menu_draw_button(upscale_x(view_wview[0]/2),upscale_y(view_hview[0]-50),"Back",0)
+menu_draw_button(upscale_x(20),upscale_y(view_hview[0]-10),"Back",0)
 
 
 

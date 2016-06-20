@@ -7,12 +7,19 @@
     <extension index="0">extensions\Shadows</extension>
     <extension index="1">extensions\Pathfinding</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_background</sound>
+    <sound>sound\snd_key</sound>
+    <sound>sound\snd_ping</sound>
+    <sound>sound\snd_key_bounce</sound>
+    <sound>sound\snd_steal</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_car</sprite>
     <sprite>sprites\spr_street_light</sprite>
     <sprite>sprites\spr_light_post</sprite>
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_credits</sprite>
     <sprite>sprites\spr_light</sprite>
     <sprite>sprites\spr_select</sprite>
     <sprite>sprites\spr_timer</sprite>
@@ -65,6 +72,7 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_camera</path>
+    <path>paths\pth_credit</path>
     <path>paths\pth_tutorial</path>
   </paths>
   <scripts name="scripts">
@@ -179,6 +187,7 @@
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_menu_camera</object>
+      <object>objects\obj_credit_camera</object>
     </objects>
     <object>objects\obj_selection</object>
     <object>objects\obj_collidable</object>
@@ -217,6 +226,7 @@
       <object>objects\obj_drunk</object>
       <object>objects\obj_drunk_bar</object>
       <object>objects\obj_drunk_driver</object>
+      <object>objects\obj_credit</object>
     </objects>
     <object>objects\obj_bucket</object>
     <objects name="Walls">
@@ -252,6 +262,7 @@
     <object>objects\obj_fps</object>
     <object>objects\obj_bubble</object>
     <object>objects\obj_level_reset</object>
+    <object>objects\obj_music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

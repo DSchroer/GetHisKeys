@@ -369,6 +369,8 @@ if(obj != noone)
                 other.button_x = ""
             }
             
+            audio_play_sound(snd_key,1,false)
+            
             puickup = true;
         }
         
@@ -466,6 +468,8 @@ if(keyboard_check_pressed(ord('X')))
         {
             instance_destroy()
         }
+        
+        audio_play_sound(snd_key,1,false)
     }
 }
 
